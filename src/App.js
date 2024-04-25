@@ -14,6 +14,7 @@ import {
 function App() {
   const [mode, setMode] = useState('light');
   const [alert, setAlert] = useState(null);
+  const baseName = document.URL.includes('https://github.com/Saurabh-Shukla534/Text_Utility_App-React') ? '/Text_Utility_App-React' : '/';
 
   const showAlert = (message, type) => {
     setAlert({
@@ -52,17 +53,17 @@ function App() {
   }
   return (
     <>
-    <Router basename={document.URL.includes('https://github.com/Saurabh-Shukla534/Text_Utility_App-React') ? '/Text_Utility_App-React' : '/'}>
+    <Router>
       <Navbar title="Text Utils" aboutText="About us" mode={mode} toggleMode={toggleMode}/>
       <Alert alert={alert}/>
       <Routes>
-        <Route path="/about" element={
+        <Route path={baseName + "/about"} element={
           <div className="container my-4">
             <About />
           </div>
         }>
         </Route>
-        <Route path="/" element={
+        <Route path={baseName + "/"} element={
           <div className="container my-4">
             <TextForm heading="Enter text to perform operations" mode={mode} showAlert={showAlert}/> 
           </div>
