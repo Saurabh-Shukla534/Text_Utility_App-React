@@ -52,7 +52,7 @@ function App() {
   }
   return (
     <>
-    <Router basename='/'>
+    <Router basename={'/'}>
       <Navbar title="Text Utils" aboutText="About us" mode={mode} toggleMode={toggleMode}/>
       <Alert alert={alert}/>
       <Routes>
