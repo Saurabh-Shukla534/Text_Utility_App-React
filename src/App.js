@@ -52,7 +52,7 @@ function App() {
   }
   return (
     <>
-    <Router basename={'/'}>
+    <Router basename={document.URL.includes('https://github.com/Saurabh-Shukla534/Text_Utility_App-React') ? '/Text_Utility_App-React' : '/'}>
       <Navbar title="Text Utils" aboutText="About us" mode={mode} toggleMode={toggleMode}/>
       <Alert alert={alert}/>
       <Routes>
